@@ -12,20 +12,17 @@ const LaunchRequestHandler = {
     },
     async handle(handlerInput) {
 
-        let speakOutput = 'Welcome, you can say Hello or Help. Which would you like to try?';
+        let speakOutput = 'Welcome to Airtable Integration Demo. With this skill you can fetch data from your Airtable.';
         const config = {
                   method: 'get',
-                  baseURL: 'https://api.airtable.com/v0/appDhlFZI3UvyIGBg/team?maxRecords=10&view=Grid%20view',
-                  //url: '/recxpcNsZuIPdSWA7',
-                  headers: {'Authorization': 'Bearer keyCJkzoD5MFjmVRm'}
+                  baseURL: 'BASE_API_KEY', //Enter your base api url from Airtable
+                  url: 'RECORD_ID', //Enter the key of your field
+                  headers: {'Authorization': 'Bearer KEY'} //Enter your bearer key
                 }
         await axios(config).then(response => {
-            const names = JSON.stringify(response.data.records.map(a=>a.fields.Name), null, 2);
-            speakOutput =`Here are the names from your team-work database ${names}`;
-            //console.log("speakoutput is here  ",speakOutput);
-            console.log(JSON.stringify(response.data.records.map(a=>a.fields.Name), null, 2));
-            //`Here is your data for the first Record. Name is: ${response.data.fields.Name}.  ${response.data.fields.Name} was assigned with
-            //${response.data.fields.Projects} projects. And status is: ${response.data.fields.Status}`;
+            
+            speakOutput =`${response.data.fields.NAME_OF_YOUR_FIELD}`; //Replace NAME_OF_YOUR_FIELD with the field name your trying to fetch 
+            
         });
   
   
@@ -34,21 +31,6 @@ const LaunchRequestHandler = {
             .speak(speakOutput)
             .getResponse();
 
-    }
-};
-
-const HelloWorldIntentHandler = {
-    canHandle(handlerInput) {
-        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
-            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'HelloWorldIntent';
-    },
-    handle(handlerInput) {
-        const speakOutput = 'Hello World!';
-
-        return handlerInput.responseBuilder
-            .speak(speakOutput)
-            //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
-            .getResponse();
     }
 };
 
@@ -162,7 +144,6 @@ const ErrorHandler = {
 exports.handler = Alexa.SkillBuilders.custom()
     .addRequestHandlers(
         LaunchRequestHandler,
-        HelloWorldIntentHandler,
         HelpIntentHandler,
         CancelAndStopIntentHandler,
         FallbackIntentHandler,
