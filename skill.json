@@ -1,50 +1,49 @@
 {
   "manifest": {
-    "publishingInformation": {
-      "locales": {
-        "en-US": {
-          "summary": "Sample Short Description",
-          "examplePhrases": [
-            "Alexa open hello world template",
-            "Alexa tell hello world template I am Jeff",
-            "Alexa tell hello world template my name is Peter"
-          ],
-          "keywords": [
-            "keyword1",
-            "keyword2",
-            "keyword3"
-          ],
-          "name": "Template 1 - Basic Starter Example",
-          "description": "Sample Full Description",
-          "smallIconUri": "https://s3.amazonaws.com/cdn.dabblelab.com/img/skill-template-default-sm.png",
-          "largeIconUri": "https://s3.amazonaws.com/cdn.dabblelab.com/img/skill-template-default-lg.png"
-        }
-      },
-      "isAvailableWorldwide": true,
-      "testingInstructions": "No special instructions.",
-      "category": "EDUCATION_AND_REFERENCE",
-      "distributionCountries": []
-    },
     "apis": {
       "custom": {
         "endpoint": {
-          "sourceDir": "lambda/custom"
+          "uri": "arn:aws:lambda:us-east-1:128848124248:function:6d5d4014-a803-49f9-af35-80082619e0c4:Release_0"
+        },
+        "interfaces": [],
+        "regions": {
+          "NA": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:us-east-1:128848124248:function:6d5d4014-a803-49f9-af35-80082619e0c4:Release_0"
+            }
+          },
+          "EU": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:eu-west-1:128848124248:function:6d5d4014-a803-49f9-af35-80082619e0c4:Release_0"
+            }
+          },
+          "FE": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:us-west-2:128848124248:function:6d5d4014-a803-49f9-af35-80082619e0c4:Release_0"
+            }
+          }
         }
       }
     },
     "manifestVersion": "1.0",
-    "privacyAndCompliance": {
-      "allowsPurchases": false,
+    "publishingInformation": {
+      "category": "KNOWLEDGE_AND_TRIVIA",
+      "distributionCountries": [],
+      "isAvailableWorldwide": true,
       "locales": {
-        "en-US": {
-          "termsOfUseUrl": "http://dabblelab.com/terms",
-          "privacyPolicyUrl": "http://dabblelab.com/privacy"
+        "en-IN": {
+          "description": "Sample Full Description",
+          "examplePhrases": [
+            "Alexa open hello world",
+            "hello",
+            "help"
+          ],
+          "keywords": [],
+          "name": "cms test",
+          "summary": "Sample Short Description"
         }
       },
-      "isExportCompliant": true,
-      "containsAds": false,
-      "isChildDirected": false,
-      "usesPersonalInfo": false
+      "testingInstructions": "Sample Testing Instructions."
     }
   }
 }
