@@ -21,13 +21,11 @@ const LaunchRequestHandler = {
                 }
         await axios(config).then(response => {
             
+            const entire_column = JSON.stringify(response.data.records.map(a=>a.fields.Name), null, 2); //Stores all the names of the column name
             speakOutput =`${response.data.fields.NAME_OF_YOUR_FIELD}`; //Replace NAME_OF_YOUR_FIELD with the field name your trying to fetch 
             
         });
-  
-  
-  
-         return handlerInput.responseBuilder
+           return handlerInput.responseBuilder
             .speak(speakOutput)
             .getResponse();
 
