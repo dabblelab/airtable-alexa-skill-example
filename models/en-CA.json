@@ -1,7 +1,7 @@
 {
   "interactionModel": {
     "languageModel": {
-      "invocationName": "demo airtable",
+      "invocationName": "airtable demo",
       "intents": [
         {
           "name": "AMAZON.CancelIntent",
