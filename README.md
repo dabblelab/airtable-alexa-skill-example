@@ -1,4 +1,4 @@
-![](https://raw.githubusercontent.com/dabblelab/alexa-airtable-demo/image.png)
+![](https://raw.githubusercontent.com/dabblelab/alexa-airtable-demo/master/image.png)
 
 # Airtable - Alexa Skill Template
 
